@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Fotel</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sklep meblowy</h1>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <img src="fotel1.png" alt="fotel" class="obraz"
+                 id="obrazGlowny" onclick="otworzOkno()">
+
+            <div>
+                <img src="fotel1.png" alt="miniatura" class="miniatury"
+                     onclick="zmienObraz(this)">
+                <img src="fotel2.png" alt="miniatura" class="miniatury"
+                     onclick="zmienObraz(this)">
+                <img src="fotel3.png" alt="miniatura" class="miniatury"
+                     onclick="zmienObraz(this)">
+            </div>
+
+            <div class="okno" id="okno">
+                <span class="zamknij" onclick="zamknijOkno()">
+                    &times;
+                </span>
+                <img class="obrazOkno" id="obrazOkno" alt="fotel">
+            </div>
+        </section>
+
+        <article>
+            <h2>Żółty Fotel</h2>
+
+            <p>W tym miejscu wstaw pierwszy paragraf z pliku opisFotel.txt.</p>
+            <p>W tym miejscu wstaw drugi paragraf z pliku opisFotel.txt.</p>
+
+            <p><strong>Wybierz wariant fotela</strong></p>
+
+            <select>
+                <option>wariant 1</option>
+                <option>wariant 2</option>
+                <option>wariant 3</option>
+            </select>
+
+            <p>
+                <button>KUP TERAZ</button>
+            </p>
+
+            <p><a href="sklep.html">Do strony głównej</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <hr>
+        <p>Autor strony: <em>000000000</em></p>
+    </footer>
+
+    <script>
+        function zmienObraz(miniatura) {
+            document.getElementById("obrazGlowny").src = miniatura.src;
+        }
+
+        function otworzOkno() {
+            
+            const okno = document.getElementById("okno");
+            const obrazGlowny = document.getElementById("obrazGlowny");
+            const obrazOkno = document.getElementById("obrazOkno");
+
+            obrazOkno.src = obrazGlowny.src;
+            okno.style.display = "block";
+        }
+
+        function zamknijOkno() {
+            document.getElementById("okno").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
